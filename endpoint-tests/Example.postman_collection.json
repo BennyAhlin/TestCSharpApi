@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ece91254-f54e-4473-b421-e99bfcee567e",
-		"name": "Example",
+		"_postman_id": "0a50d832-85d0-40f6-a774-4612474a92b3",
+		"name": "Example Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "34638438"
+		"_exporter_id": "34617096"
 	},
 	"item": [
 		{
@@ -45,7 +45,6 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"// Test data to use, pasted from our json file with test data",
 							"let testData = {",
 							"  \"counter\": 0,",
 							"  \"categories\": [",
@@ -56,72 +55,69 @@
 							"    {",
 							"      \"name\": \"Frukter\",",
 							"      \"description\": \"Färska frukter.\"",
+							"    },",
+							"    {",
+							"      \"name\": \"Rengöringsprodukter\",",
+							"      \"description\": \"Allt du behöver för att hålla hemmet rent.\"",
 							"    }",
 							"  ],",
-							"  \"products\": [{",
-							"    \"name\": \"gurka\",",
-							"    \"description\": \"bra till mycket\",",
-							"    \"price\": 10,",
-							"    \"categoryId\": \"Grönsaker\"",
-							"  },",
-							"  {",
-							"    \"name\": \"Sallad\",",
-							"    \"description\": \"grön och fräsch\",",
-							"    \"price\": 12,",
-							"    \"categoryId\": \"Grönsaker\"",
-							"  },",
-							"  {",
-							"    \"name\": \"tomat\",",
-							"    \"description\": \"kom nu ketchup\",",
-							"    \"price\": 10,",
-							"    \"categoryId\": \"Grönsaker\"",
-							"  },",
-							"  {",
-							"    \"name\": \"morot\",",
-							"    \"description\": \"I väntan på snö\",",
-							"    \"price\": 10,",
-							"    \"categoryId\": \"Grönsaker\"",
-							"  },",
-							"  {",
-							"    \"name\": \"Äpple\",",
-							"    \"description\": \"Gott att bita i\",",
-							"    \"price\": 42,",
-							"    \"categoryId\": \"Frukter\"",
-							"  },",
-							"  {",
-							"    \"name\": \"Banan\",",
-							"    \"description\": \"BANANAAAAA\",",
-							"    \"price\": 23,",
-							"    \"categoryId\": \"Frukter\"",
-							"  }",
+							"  \"products\": [",
+							"    {",
+							"      \"name\": \"Gurka\",",
+							"      \"description\": \"Fin fin gurka\",",
+							"      \"price\": 10,",
+							"      \"categoryId\": \"Grönsaker\"",
+							"    },",
+							"",
+							"    {",
+							"      \"name\": \"Paprika\",",
+							"      \"description\": \"Fin paprika\",",
+							"      \"price\": 30,",
+							"      \"categoryId\": \"Grönsaker\"",
+							"    },",
+							"",
+							"    {",
+							"      \"name\": \"Såpa\",",
+							"      \"description\": \"Luktar gott\",",
+							"      \"price\": 20,",
+							"      \"categoryId\": \"Rengöringsprodukter\"",
+							"    },",
+							"",
+							"    {",
+							"      \"name\": \"Tvål\",",
+							"      \"description\": \"Snart kass\",",
+							"      \"price\": 25,",
+							"      \"categoryId\": \"Rengöringsprodukter\"",
+							"    },",
+							"",
+							"    {",
+							"      \"name\": \"Apelsin\",",
+							"      \"description\": \"Mogen\",",
+							"      \"price\": 5,",
+							"      \"categoryId\": \"Frukter\"",
+							"    }",
 							"  ],",
 							"  \"comments\": [",
 							"    {",
-							"      \"comment\": \"Bananen smakade bra!\",",
+							"      \"comment\": \"Gurkan är mogen\",",
 							"      \"userId\": 3,",
-							"      \"productId\": \"Banan\"",
+							"      \"productId\": \"Gurka\"",
 							"    },",
+							"",
 							"    {",
-							"      \"comment\": \"sallad smakade bra!\",",
+							"      \"comment\": \"Paprikan är gul\",",
 							"      \"userId\": 3,",
-							"      \"productId\": \"Sallad\"",
+							"      \"productId\": \"Paprika\"",
 							"    },",
+							"",
 							"    {",
-							"      \"comment\": \"goorka smakade bra!\",",
+							"      \"comment\": \"Tvålen är bra\",",
 							"      \"userId\": 3,",
-							"      \"productId\": \"gurka\"",
+							"      \"productId\": \"Tvål\"",
 							"    },",
-							"    {",
-							"      \"comment\": \"Äpplet smakade bra!\",",
-							"      \"userId\": 3,",
-							"      \"productId\": \"Äpple\"",
-							"    }",
-							"  ]",
+							"]",
 							"};",
 							"",
-							"// Set the test data as a collection variable",
-							"// (collection variables are available",
-							"//. for all requests in a colleciton)",
 							"pm.collectionVariables.set(\"testData\",testData);"
 						],
 						"type": "text/javascript",
@@ -515,7 +511,7 @@
 							"}",
 							"// Otherwise console.log \"All done\"",
 							"else {",
-							"    console.log(\"All categories have been read correctly after the change1.\");",
+							"    console.log(\"All categories have been read correctly after the change.\");",
 							"    // IMPORTANT: Set counter to 0 in preparation of next request",
 							"    testData.counter = 0;",
 							"    pm.collectionVariables.set(\"testData\",testData);",
@@ -555,32 +551,28 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"// Get the test data",
-							"let testData = pm.collectionVariables.get(\"testData\");",
-							"",
-							"// Get the current products",
-							"let product = testData.products[testData.counter];",
-							"",
-							"// Replace the category name in the property categoryId",
-							"// with actual id of the category",
-							"",
-							"// Find the correct category",
-							"let categoryWithMatchingName = ",
-							"testData.categories.find(category => {",
-							"    return category.name == product.categoryId",
-							"});",
-							"// Change the categoryId property of the product",
-							"// to the id of the matching category",
-							"product.categoryId = categoryWithMatchingName.id;",
-							"",
-							"// Save changes to our test data (the new value of categoryId)",
-							"pm.collectionVariables.set(\"testData\",testData);",
-							"",
-							"// pm variables have a scope of one request",
-							"// setting four variables used in the body",
-							"pm.variables.set(\"name\", product.name);",
-							"pm.variables.set(\"description\", product.description);",
-							"pm.variables.set(\"price\", product.price);",
+							"// Get the test data\r",
+							"let testData = pm.collectionVariables.get(\"testData\");\r",
+							"\r",
+							"// Get the current category\r",
+							"let product = testData.products[testData.counter];\r",
+							"\r",
+							"// Replace the category name in the property categoryId with actual id of the category\r",
+							"    let categoryWithMatchingName = testData.categories.find(category => {\r",
+							"        return category.name == product.categoryId\r",
+							"    });\r",
+							"\r",
+							"    // Change the categoryId property of the product to the id of the matching category\r",
+							"    product.categoryId = categoryWithMatchingName.id;\r",
+							"\r",
+							"    // Save changes to our test data (the new value of categoryId)\r",
+							"console.log(\"A product\", product);\r",
+							"pm.collectionVariables.set(\"testData\",testData);\r",
+							"// pm variables have a scope of one request\r",
+							"// setting two variables used in the body\r",
+							"pm.variables.set(\"name\", product.name);\r",
+							"pm.variables.set(\"description\", product.description);\r",
+							"pm.variables.set(\"price\", product.price);\r",
 							"pm.variables.set(\"categoryId\", product.categoryId);"
 						],
 						"type": "text/javascript",
@@ -591,53 +583,53 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// Get the test data",
-							"let testData = pm.collectionVariables.get(\"testData\");",
-							"// Get the current ",
-							"let product = testData.products[testData.counter];",
-							"",
-							"// Read the response",
-							"let response = pm.response;",
-							"// Read the response data",
-							"let responseData = pm.response.json();",
-							"",
-							"// Test that we get a 200 code (ok request) back",
-							"pm.test(\"We should get an ok (code 200) back\",()=> {",
-							"    pm.expect(response.code).to.equal(200);",
-							"});",
-							"",
-							"// Test that affected rows equals 1",
-							"pm.test(\"Expect rowsAffected to equal 1\", () => {",
-							"    pm.expect(responseData.rowsAffected).to.equal(1);",
-							"});",
-							"",
-							"// Test that we get an insert id back",
-							"// also add the id in our test data (for future tests)",
-							"pm.test(\"We should get an insertId back\", () => {",
-							"    pm.expect(responseData.insertId).to.be.a('number');",
-							"    // Add the property id to the category with the",
-							"    // id recieved from the REST-api",
-							"    product.id = responseData.insertId;",
-							"    // Log",
-							"    console.log(\"The product has been created\", product);",
-							"});",
-							"",
-							"// Update the counter and save the updated test data",
-							"// (also including the id we set in the second test)",
-							"testData.counter++;",
-							"pm.collectionVariables.set(\"testData\",testData);",
-							"",
-							"// If there are more products - then \"loop\"",
-							"// through them using setNextRequest",
-							"if(testData.products[testData.counter]){",
-							"    pm.execution.setNextRequest(\"Create products\");",
-							"}",
-							"// Otherwise console.log \"All done\"",
-							"else {",
-							"    console.log(\"All products have been created.\");",
-							"    // IMPORTANT: Set counter to 0 in preparation of next request",
-							"    testData.counter = 0;",
-							"    pm.collectionVariables.set(\"testData\",testData);",
+							"// Get the test data\r",
+							"let testData = pm.collectionVariables.get(\"testData\");\r",
+							"// Get the current category\r",
+							"let product = testData.products[testData.counter];\r",
+							"\r",
+							"// Read the response\r",
+							"let response = pm.response;\r",
+							"// Read the response data\r",
+							"let responseData = pm.response.json();\r",
+							"\r",
+							"// Test that we get a 200 code (ok request) back\r",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {\r",
+							"    pm.expect(response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"// Test that affected rows equals 1\r",
+							"pm.test(\"Expect rowsAffected to equal 1\", () => {\r",
+							"    pm.expect(responseData.rowsAffected).to.equal(1);\r",
+							"});\r",
+							"\r",
+							"// Test that we get an insert id back\r",
+							"// also add the id in our test data (for future tests)\r",
+							"pm.test(\"We should get an insertId back\", () => {\r",
+							"    pm.expect(responseData.insertId).to.be.a('number');\r",
+							"    // Add the property id to the category with the\r",
+							"    // id recieved from the REST-api\r",
+							"    product.id = responseData.insertId;\r",
+							"    // Log\r",
+							"    console.log(\"The product has been created\", product);\r",
+							"});\r",
+							"\r",
+							"// Update the counter and save the updated test data\r",
+							"// (also including the id we set in the second test)\r",
+							"testData.counter++;\r",
+							"pm.collectionVariables.set(\"testData\",testData);\r",
+							"\r",
+							"// If there are more products - then \"loop\"\r",
+							"// through them using setNextRequest\r",
+							"if(testData.products[testData.counter]){\r",
+							"    pm.execution.setNextRequest(\"Create products\");\r",
+							"}\r",
+							"// Otherwise console.log \"All done\"\r",
+							"else {\r",
+							"    console.log(\"All products have been created.\");\r",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request\r",
+							"    testData.counter = 0;\r",
+							"    pm.collectionVariables.set(\"testData\",testData);\r",
 							"}"
 						],
 						"type": "text/javascript",
@@ -650,7 +642,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"{{name}}\",\n    \"description\": \"{{description}}\",\n    \"price\": {{price}},\n    \"categoryId\": {{categoryId}}\n}",
+					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"description\": \"{{description}}\",\r\n    \"price\": {{price}},\r\n    \"categoryId\": {{categoryId}}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -679,64 +671,64 @@
 			"name": "Get products",
 			"event": [
 				{
-					"listen": "test",
+					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"// Get the test data\r",
-							"let testData = pm.collectionVariables.get(\"testData\");\r",
-							"// Get the current product\r",
-							"let product = testData.products[testData.counter];\r",
-							" \r",
-							"// Read the response\r",
-							"let response = pm.response;\r",
-							"// Read the response data\r",
-							"let responseData = pm.response.json();\r",
-							"\r",
-							"// Test that we get a 200 code (ok request) back\r",
-							"pm.test(\"We should get an ok (code 200) back\",()=> {\r",
-							"    pm.expect(response.code).to.equal(200);\r",
-							"});\r",
-							"\r",
-							"// Test that the REST-api returns the sama data\r",
-							"// as our test data for the product\r",
-							"pm.test(\"Test that the correct product data is returned\", ()=> {\r",
-							"  console.log(\"product\", product);\r",
-							"  console.log(\"responseData\", responseData);\r",
-							"  pm.expect(product).to.deep.equal(responseData); \r",
-							"});\r",
-							"\r",
-							"// Update the counter and save the updated test data\r",
-							"testData.counter++;\r",
-							"pm.collectionVariables.set(\"testData\",testData);\r",
-							"\r",
-							"// If there are more products - then \"loop\"\r",
-							"// through them using setNextRequest\r",
-							"if(testData.products[testData.counter]){\r",
-							"    pm.execution.setNextRequest(\"Get products\");\r",
-							"}\r",
-							"// Otherwise console.log \"All done\"\r",
-							"else {\r",
-							"    console.log(\"All products have been read correctly.\");\r",
-							"    // IMPORTANT: Set counter to 0 in preparation of next request\r",
-							"    testData.counter = 0;\r",
-							"    pm.collectionVariables.set(\"testData\",testData);\r",
-							"}"
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", product.id); "
 						],
 						"type": "text/javascript",
 						"packages": {}
 					}
 				},
 				{
-					"listen": "prerequest",
+					"listen": "test",
 					"script": {
 						"exec": [
-							"// Get the test data\r",
-							"let testData = pm.collectionVariables.get(\"testData\");\r",
-							"// Get the current category\r",
-							"let product = testData.products[testData.counter];\r",
-							"\r",
-							"// Set a pm variable to id (it is used in the request url)\r",
-							"pm.variables.set(\"id\", product.id); "
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 200 code (ok request) back",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"",
+							"// Test that the REST-api returns the sama data",
+							"// as our test data for the product",
+							"pm.test(\"Test that the correct product data is returned\", ()=> {",
+							"  console.log(\"product\", product);",
+							"  console.log(\"responseData\", responseData);",
+							"  pm.expect(product).to.deep.equal(responseData); ",
+							"});",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more products - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.products[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Get products\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All products have been read correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -772,41 +764,41 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// Get the test data\r",
-							"let testData = pm.collectionVariables.get(\"testData\");\r",
-							"// Get the current product\r",
-							"let product = testData.products[testData.counter];\r",
-							"\r",
-							"// Read the response\r",
-							"let response = pm.response;\r",
-							"// Read the response data\r",
-							"let responseData = pm.response.json();\r",
-							"\r",
-							"// Test that we get a 200 code (ok request) back\r",
-							"pm.test(\"We should get an ok (code 200) back\",()=> {\r",
-							"    pm.expect(response.code).to.equal(200);\r",
-							"});\r",
-							"\r",
-							"// Test that affected rows equals 1\r",
-							"pm.test(\"Expect rowsAffected to equal 1\", () => {\r",
-							"    pm.expect(responseData.rowsAffected).to.equal(1);\r",
-							"});\r",
-							"\r",
-							"// Update the counter and save the updated test data\r",
-							"testData.counter++;\r",
-							"pm.collectionVariables.set(\"testData\",testData);\r",
-							"\r",
-							"// If there are more products - then \"loop\"\r",
-							"// through them using setNextRequest\r",
-							"if(testData.products[testData.counter]){\r",
-							"    pm.execution.setNextRequest(\"Change products\");\r",
-							"}\r",
-							"// Otherwise console.log \"All done\"\r",
-							"else {\r",
-							"    console.log(\"All product-decriptions have been changed.\");\r",
-							"    // IMPORTANT: Set counter to 0 in preparation of next request\r",
-							"    testData.counter = 0;\r",
-							"    pm.collectionVariables.set(\"testData\",testData);\r",
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 200 code (ok request) back",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"",
+							"// Test that affected rows equals 1",
+							"pm.test(\"Expect rowsAffected to equal 1\", () => {",
+							"    pm.expect(responseData.rowsAffected).to.equal(1);",
+							"});",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more products - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.products[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Change products\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All product-decriptions have been changed.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
 							"}"
 						],
 						"type": "text/javascript",
@@ -817,19 +809,19 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"// Get the test data\r",
-							"let testData = pm.collectionVariables.get(\"testData\");\r",
-							"// Get the current category\r",
-							"let product = testData.products[testData.counter];\r",
-							"\r",
-							"// Change the description and save to collectionVariables\r",
-							"product.description += \" Adding text!.\";\r",
-							"pm.collectionVariables.set(\"testData\", testData);\r",
-							"\r",
-							"// Set a pm variable to id (it is used in the request url)\r",
-							"pm.variables.set(\"id\", product.id); \r",
-							"\r",
-							"// Set a pm variable to description (it is used in the request body)\r",
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Change the description and save to collectionVariables",
+							"product.description += \" Some extra text in the description.\";",
+							"pm.collectionVariables.set(\"testData\", testData);",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", product.id); ",
+							"",
+							"// Set a pm variable to description (it is used in the request body)",
 							"pm.variables.set(\"description\", product.description);"
 						],
 						"type": "text/javascript",
@@ -842,7 +834,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"description\": \"{{description}}\"\r\n}",
+					"raw": "{\n    \"description\": \"{{description}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -877,7 +869,7 @@
 						"exec": [
 							"// Get the test data",
 							"let testData = pm.collectionVariables.get(\"testData\");",
-							"// Get the current category",
+							"// Get the current product",
 							"let product = testData.products[testData.counter];",
 							"",
 							"// Set a pm variable to id (it is used in the request url)",
@@ -895,7 +887,7 @@
 							"let testData = pm.collectionVariables.get(\"testData\");",
 							"// Get the current product",
 							"let product = testData.products[testData.counter];",
-							" ",
+							"",
 							"// Read the response",
 							"let response = pm.response;",
 							"// Read the response data",
@@ -925,7 +917,7 @@
 							"}",
 							"// Otherwise console.log \"All done\"",
 							"else {",
-							"    console.log(\"All products have been read correctly after the change.\");",
+							"    console.log(\"All products have been read correctly.\");",
 							"    // IMPORTANT: Set counter to 0 in preparation of next request",
 							"    testData.counter = 0;",
 							"    pm.collectionVariables.set(\"testData\",testData);",
@@ -965,28 +957,26 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"// Get the test data",
-							"let testData = pm.collectionVariables.get(\"testData\");",
-							"",
-							"// Get the current products",
-							"let comment = testData.comments[testData.counter];",
-							"",
-							"// Find the correct ",
-							"let productWithMatchingName = ",
-							"testData.products.find(product => {",
-							"    return product.name == comment.productId",
-							"});",
-							"",
-							"comment.productId = productWithMatchingName.id;",
-							"",
-							"",
-							"// Save changes to our test data (the new value of categoryId)",
-							"pm.collectionVariables.set(\"testData\",testData);",
-							"",
-							"// pm variables have a scope of one request",
-							"// setting four variables used in the body",
-							"pm.variables.set(\"comment\", comment.comment);",
-							"pm.variables.set(\"userId\", comment.userId);",
+							"// Get the test data\r",
+							"let testData = pm.collectionVariables.get(\"testData\");\r",
+							"\r",
+							"// Get the current comment\r",
+							"let comment = testData.comments[testData.counter];\r",
+							"\r",
+							"// Replace the comment name in the property commentId with actual id of the comment\r",
+							"    let productWithMatchingName = testData.products.find(product => {\r",
+							"        return product.name == comment.productId\r",
+							"    });\r",
+							"\r",
+							"    // Change the commentId property of the comment to the id of the matching comment\r",
+							"    comment.productId = productWithMatchingName.id;\r",
+							"\r",
+							"    // Save changes to our test data (the new value of commentId)\r",
+							"pm.collectionVariables.set(\"testData\",testData);\r",
+							"// pm variables have a scope of one request\r",
+							"// setting two variables used in the body\r",
+							"pm.variables.set(\"comment\", comment.comment);\r",
+							"pm.variables.set(\"userId\", comment.userId);\r",
 							"pm.variables.set(\"productId\", comment.productId);"
 						],
 						"type": "text/javascript",
@@ -997,53 +987,53 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// Get the test data",
-							"let testData = pm.collectionVariables.get(\"testData\");",
-							"// Get the current ",
-							"let comment = testData.comments[testData.counter];",
-							"",
-							"// Read the response",
-							"let response = pm.response;",
-							"// Read the response data",
-							"let responseData = pm.response.json();",
-							"",
-							"// Test that we get a 200 code (ok request) back",
-							"pm.test(\"We should get an ok (code 200) back\",()=> {",
-							"    pm.expect(response.code).to.equal(200);",
-							"});",
-							"",
-							"// Test that affected rows equals 1",
-							"pm.test(\"Expect rowsAffected to equal 1\", () => {",
-							"    pm.expect(responseData.rowsAffected).to.equal(1);",
-							"});",
-							"",
-							"// Test that we get an insert id back",
-							"// also add the id in our test data (for future tests)",
-							"pm.test(\"We should get an insertId back\", () => {",
-							"    pm.expect(responseData.insertId).to.be.a('number');",
-							"    // Add the property id to the category with the",
-							"    // id recieved from the REST-api",
-							"    comment.id = responseData.insertId;",
-							"    // Log",
-							"    console.log(\"The comment has been created\", comment);",
-							"});",
-							"",
-							"// Update the counter and save the updated test data",
-							"// (also including the id we set in the second test)",
-							"testData.counter++;",
-							"pm.collectionVariables.set(\"testData\",testData);",
-							"",
-							"// If there are more comments - then \"loop\"",
-							"// through them using setNextRequest",
-							"if(testData.comments[testData.counter]){",
-							"    pm.execution.setNextRequest(\"Create comments\");",
-							"}",
-							"// Otherwise console.log \"All done\"",
-							"else {",
-							"    console.log(\"All comment have been created.\");",
-							"    // IMPORTANT: Set counter to 0 in preparation of next request",
-							"    testData.counter = 0;",
-							"    pm.collectionVariables.set(\"testData\",testData);",
+							"// Get the test data\r",
+							"let testData = pm.collectionVariables.get(\"testData\");\r",
+							"// Get the current comment\r",
+							"let comment = testData.comments[testData.counter];\r",
+							"\r",
+							"// Read the response\r",
+							"let response = pm.response;\r",
+							"// Read the response data\r",
+							"let responseData = pm.response.json();\r",
+							"\r",
+							"// Test that we get a 200 code (ok request) back\r",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {\r",
+							"    pm.expect(response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"// Test that affected rows equals 1\r",
+							"pm.test(\"Expect rowsAffected to equal 1\", () => {\r",
+							"    pm.expect(responseData.rowsAffected).to.equal(1);\r",
+							"});\r",
+							"\r",
+							"// Test that we get an insert id back\r",
+							"// also add the id in our test data (for future tests)\r",
+							"pm.test(\"We should get an insertId back\", () => {\r",
+							"    pm.expect(responseData.insertId).to.be.a('number');\r",
+							"    // Add the property id to the comment with the\r",
+							"    // id recieved from the REST-api\r",
+							"    comment.id = responseData.insertId;\r",
+							"    // Log\r",
+							"    console.log(\"The comment has been created\", comment);\r",
+							"});\r",
+							"\r",
+							"// Update the counter and save the updated test data\r",
+							"// (also including the id we set in the second test)\r",
+							"testData.counter++;\r",
+							"pm.collectionVariables.set(\"testData\",testData);\r",
+							"\r",
+							"// If there are more comments - then \"loop\"\r",
+							"// through them using setNextRequest\r",
+							"if(testData.comments[testData.counter]){\r",
+							"    pm.execution.setNextRequest(\"Create comments\");\r",
+							"}\r",
+							"// Otherwise console.log \"All done\"\r",
+							"else {\r",
+							"    console.log(\"All comments have been created.\");\r",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request\r",
+							"    testData.counter = 0;\r",
+							"    pm.collectionVariables.set(\"testData\",testData);\r",
 							"}"
 						],
 						"type": "text/javascript",
@@ -1056,7 +1046,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"comment\": \"{{comment}}\",\n    \"userId\": {{userId}},\n    \"productId\": {{productId}}\n}",
+					"raw": "{\r\n    \"comment\": \"{{comment}}\",\r\n    \"userId\": {{userId}},\r\n    \"productId\": {{productId}}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1090,7 +1080,7 @@
 						"exec": [
 							"// Get the test data",
 							"let testData = pm.collectionVariables.get(\"testData\");",
-							"// Get the current category",
+							"// Get the current comment",
 							"let comment = testData.comments[testData.counter];",
 							"",
 							"// Set a pm variable to id (it is used in the request url)",
@@ -1106,7 +1096,7 @@
 						"exec": [
 							"// Get the test data",
 							"let testData = pm.collectionVariables.get(\"testData\");",
-							"// Get the current comments",
+							"// Get the current comment",
 							"let comment = testData.comments[testData.counter];",
 							"",
 							"// Read the response",
@@ -1172,7 +1162,200 @@
 			"response": []
 		},
 		{
-			"name": "Logout admin",
+			"name": "Change comments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 200 code (ok request) back",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"",
+							"// Test that affected rows equals 1",
+							"pm.test(\"Expect rowsAffected to equal 1\", () => {",
+							"    pm.expect(responseData.rowsAffected).to.equal(1);",
+							"});",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more comments - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.comments[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Change comments\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All comments have been changed.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Change the description and save to collectionVariables",
+							"comment.comment += \" Some extra text in the description.\";",
+							"pm.collectionVariables.set(\"testData\", testData);",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", comment.id); ",
+							"",
+							"// Set a pm variable to description (it is used in the request body)",
+							"pm.variables.set(\"comment\", comment.comment);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"comment\": \"{{comment}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/comments/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"comments",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get comments after change",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", comment.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 200 code (ok request) back",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"",
+							"// Test that the REST-api returns the sama data",
+							"// as our test data for the comment",
+							"pm.test(\"Test that the correct comment data is returned\", ()=> {",
+							"  console.log(\"comment\", comment);",
+							"  console.log(\"responseData\", responseData);",
+							"  pm.expect(comment).to.deep.equal(responseData); ",
+							"});",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more comments - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.comments[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Get comments after change\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All comments have been read correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/comments/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"comments",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Logout",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -1201,7 +1384,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"olle@nodehill.com\",\n    \"password\": \"12345678\"\n}",
+					"raw": "{\n    \"email\": \"maria@nodehill.com\",\n    \"password\": \"12345678\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1227,35 +1410,41 @@
 			"response": []
 		},
 		{
-			"name": "Create categories user",
+			"name": "Create categories as user",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
+							"// Get the test data",
 							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
 							"let category = testData.categories[testData.counter];",
 							"",
+							"// Read the response",
 							"let response = pm.response;",
+							"// Read the response data",
 							"let responseData = pm.response.json();",
 							"",
-							"pm.test(\"No permission to create categories\",()=> {",
+							"// Test that we get a 405 code (Not Allowed) back",
+							"pm.test(\"We should get an Not Allowed (code 405) back\",()=> {",
 							"    pm.expect(response.code).to.equal(405);",
 							"});",
 							"",
-							"pm.test(\"Nothing changed\", () => {",
-							"    pm.expect(responseData.rowsAffected).to.not.equal(1);",
-							"});",
 							"",
+							"// Update the counter and save the updated test data",
+							"// (also including the id we set in the second test)",
 							"testData.counter++;",
 							"pm.collectionVariables.set(\"testData\",testData);",
 							"",
+							"// If there are more categories - then \"loop\"",
+							"// through them using setNextRequest",
 							"if(testData.categories[testData.counter]){",
-							"    pm.execution.setNextRequest(\"Create categories user\");",
+							"    pm.execution.setNextRequest(\"Create categories as user\");",
 							"}",
 							"// Otherwise console.log \"All done\"",
 							"else {",
-							"    console.log(\"No categories have been created.\");",
+							"    console.log(\"All categories have been created.\");",
 							"    // IMPORTANT: Set counter to 0 in preparation of next request",
 							"    testData.counter = 0;",
 							"    pm.collectionVariables.set(\"testData\",testData);",
@@ -1274,8 +1463,10 @@
 							"// Get the current category",
 							"let category = testData.categories[testData.counter];",
 							"",
-							"pm.variables.set(\"name\", category.name);",
-							"pm.variables.set(\"description\", category.description);"
+							"// pm variables have a scope of one request",
+							"// setting two variables used in the body",
+							" pm.variables.set(\"name\", category.name);",
+							" pm.variables.set(\"description\", category.description);"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -1313,7 +1504,97 @@
 			"response": []
 		},
 		{
-			"name": "Change categories user",
+			"name": "Get categories as User",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let category = testData.categories[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", category.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let category = testData.categories[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 200 code (ok request) back",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"",
+							"// Test that the REST-api returns the sama data",
+							"// as our test data for the category",
+							"pm.test(\"Test that the correct category data is returned\", ()=> {",
+							"  console.log(\"category\", category);",
+							"  console.log(\"responseData\", responseData);",
+							"  pm.expect(category).to.deep.equal(responseData); ",
+							"});",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more categories - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.categories[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Get categories as User\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All categories have been read correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/categories/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"categories",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change categories as User",
 			"event": [
 				{
 					"listen": "test",
@@ -1329,14 +1610,11 @@
 							"// Read the response data",
 							"let responseData = pm.response.json();",
 							"",
-							"pm.test(\"Not allowed to change categories as user.\",()=> {",
+							"// Test that we get a 405 code (Not Allowed) back",
+							"pm.test(\"We should get an Not Allowed (code 405) back\",()=> {",
 							"    pm.expect(response.code).to.equal(405);",
 							"});",
 							"",
-							"// Test that affected rows equals 1",
-							"pm.test(\"no rows should be affected\", () => {",
-							"    pm.expect(responseData.rowsAffected).to.not.equal(1);",
-							"});",
 							"",
 							"// Update the counter and save the updated test data",
 							"testData.counter++;",
@@ -1344,13 +1622,12 @@
 							"",
 							"// If there are more categories - then \"loop\"",
 							"// through them using setNextRequest",
-							"if(response.code == 200){",
-							"    category.description += \" Illegal changes was made.\";",
-							"    pm.execution.setNextRequest(\"Change categories user\");",
+							"if(testData.categories[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Change categories as User\");",
 							"}",
-							"",
+							"// Otherwise console.log \"All done\"",
 							"else {",
-							"    console.log(\"No category-decriptions have been changed.\");",
+							"    console.log(\"All category-decriptions have been changed.\");",
 							"    // IMPORTANT: Set counter to 0 in preparation of next request",
 							"    testData.counter = 0;",
 							"    pm.collectionVariables.set(\"testData\",testData);",
@@ -1370,6 +1647,7 @@
 							"let category = testData.categories[testData.counter];",
 							"",
 							"// Change the description and save to collectionVariables",
+							"category.description += \" Some extra text in the description.\";",
 							"pm.collectionVariables.set(\"testData\", testData);",
 							"",
 							"// Set a pm variable to id (it is used in the request url)",
@@ -1415,7 +1693,979 @@
 			"response": []
 		},
 		{
-			"name": "Get categories after change user",
+			"name": "Delete categories as User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let category = testData.categories[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 500 code (Forbidden) back",
+							"pm.test(\"We should get an Forbidden (code 405) back\",()=> {",
+							"    pm.expect(response.code).to.equal(405);",
+							"});",
+							"",
+							"// Test that affected rows equals 1",
+							"pm.test(\"Expect rowsAffected to equal 1\", () => {",
+							"    pm.expect(responseData.rowsAffected).to.not.equal(1);",
+							"});",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more categories - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.categories[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Delete categories as User\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All categories have been deleted correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let category = testData.categories[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", category.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/categories/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"categories",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create products as User",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data\r",
+							"let testData = pm.collectionVariables.get(\"testData\");\r",
+							"\r",
+							"// Get the current product\r",
+							"let product = testData.products[testData.counter];\r",
+							"\r",
+							"// Replace the product name in the property productId with actual id of the product\r",
+							"    let categoryWithMatchingName = testData.categories.find(category => {\r",
+							"        return category.name == product.categoryId\r",
+							"    });\r",
+							"\r",
+							"// Change the categoryId property of the product to the id of the matching product\r",
+							"product.categoryId = categoryWithMatchingName?.id;\r",
+							"\r",
+							"// Save changes to our test data (the new value of productId)\r",
+							"// console.log(\"A product\", product);\r",
+							"// pm.collectionVariables.set(\"testData\",testData);\r",
+							"// pm variables have a scope of one request\r",
+							"// setting two variables used in the body\r",
+							"// pm.variables.set(\"name\", product.name);\r",
+							"// pm.variables.set(\"description\", product.description);\r",
+							"// pm.variables.set(\"price\", product.price);\r",
+							"// pm.variables.set(\"productId\", product.productId);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data\r",
+							"let testData = pm.collectionVariables.get(\"testData\");\r",
+							"// Get the current product\r",
+							"let product = testData.products[testData.counter];\r",
+							"\r",
+							"// Read the response\r",
+							"let response = pm.response;\r",
+							"// Read the response data\r",
+							"let responseData = pm.response.json();\r",
+							"\r",
+							"// Test that we get a 405 code (Not Allowed) back\r",
+							"pm.test(\"We should get an Not Allowed (code 405) back\",()=> {\r",
+							"    pm.expect(response.code).to.equal(405);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"// Update the counter and save the updated test data\r",
+							"// (also including the id we set in the second test)\r",
+							"testData.counter++;\r",
+							"pm.collectionVariables.set(\"testData\",testData);\r",
+							"\r",
+							"// If there are more products - then \"loop\"\r",
+							"// through them using setNextRequest\r",
+							"if(testData.products[testData.counter]){\r",
+							"    pm.execution.setNextRequest(\"Create products as User\");\r",
+							"}\r",
+							"// Otherwise console.log \"All done\"\r",
+							"else {\r",
+							"    console.log(\"All products have been created.\");\r",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request\r",
+							"    testData.counter = 0;\r",
+							"    pm.collectionVariables.set(\"testData\",testData);\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"description\": \"{{description}}\",\r\n    \"price\": {{price}},\r\n    \"categoryId\": {{categoryId}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/products",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get products as User",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", product.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 200 code (ok request) back",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"",
+							"// // Test that the REST-api returns the sama data",
+							"// // as our test data for the product",
+							"// pm.test(\"Test that the correct product data is returned\", ()=> {",
+							"//   console.log(\"product\", product);",
+							"//   console.log(\"responseData\", responseData);",
+							"//   pm.expect(product).to.deep.equal(responseData); ",
+							"// });",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more products - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.products[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Get products as User\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All products have been read correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/products/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change products as User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 405 code (Not Allowed) back",
+							"pm.test(\"We should get an Not Allowed (code 405) back\",()=> {",
+							"    pm.expect(response.code).to.equal(405);",
+							"});",
+							"",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more products - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.products[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Change products as User\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All product-decriptions have been changed.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Change the description and save to collectionVariables",
+							"product.description += \" Some extra text in the description.\";",
+							"pm.collectionVariables.set(\"testData\", testData);",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", product.id); ",
+							"",
+							"// Set a pm variable to description (it is used in the request body)",
+							"pm.variables.set(\"description\", product.description);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"{{description}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/products/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete products as User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that user cannot delete product due to permission restrictions",
+							"pm.test(\"User cannot delete product (405 Forbidden expected)\", () => {",
+							"  pm.expect(response.code).to.equal(405);",
+							"});",
+							"",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more categories - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.products[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Delete products as User\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All categories have been deleted correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", product.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/products/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create comments as User",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data\r",
+							"let testData = pm.collectionVariables.get(\"testData\");\r",
+							"\r",
+							"// Get the current comment\r",
+							"let comment = testData.comments[testData.counter];\r",
+							"\r",
+							"// Save changes to our test data (the new value of commentId)\r",
+							"pm.collectionVariables.set(\"testData\",testData);\r",
+							"// pm variables have a scope of one request\r",
+							"// setting two variables used in the body\r",
+							"pm.variables.set(\"comment\", comment.comment);\r",
+							"pm.variables.set(\"userId\", comment.userId);\r",
+							"pm.variables.set(\"productId\", comment.productId);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 200 code (ok request) back",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"",
+							"// Test that affected rows equals 1",
+							"pm.test(\"Expect rowsAffected to equal 1\", () => {",
+							"    pm.expect(responseData.rowsAffected).to.equal(1);",
+							"});",
+							"",
+							"// Test that we get an insert id back",
+							"// also add the id in our test data (for future tests)",
+							"pm.test(\"We should get an insertId back\", () => {",
+							"    pm.expect(responseData.insertId).to.be.a('number');",
+							"    // Add the property id to the category with the",
+							"    // id recieved from the REST-api",
+							"    comment.idForUser = responseData.insertId;",
+							"    // Log",
+							"    console.log(\"The comment has been created\", comment);",
+							"});",
+							"",
+							"// Update the counter and save the updated test data",
+							"// (also including the id we set in the second test)",
+							"testData.counter++;     //6",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more comments - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.comments[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Create comments as User\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All comment have been created.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\": \"{{comment}}\",\r\n    \"userId\": {{userId}},\r\n    \"productId\": {{productId}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/comments",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get comments as User",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", comment.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 200 code (ok request) back",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"",
+							"// // Test that the REST-api returns the sama data",
+							"// // as our test data for the comment",
+							"// pm.test(\"Test that the correct comment data is returned\", ()=> {",
+							"//   console.log(\"comment\", comment);",
+							"//   console.log(\"responseData\", responseData);",
+							"//   pm.expect(comment).to.deep.equal(responseData); ",
+							"// });",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more comments - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.comments[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Get comments as User\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All comments have been read correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/comments/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"comments",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change comments as User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 405 code (Not Allowed) back",
+							"pm.test(\"We should get an Not Allowed (code 405) back\",()=> {",
+							"    pm.expect(response.code).to.equal(405);",
+							"});",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more comments - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.comments[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Change comments as User\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All comments have been changed.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Change the description and save to collectionVariables",
+							"comment.comment += \" Some extra text in the description.\";",
+							"pm.collectionVariables.set(\"testData\", testData);",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", comment.id); ",
+							"",
+							"// Set a pm variable to description (it is used in the request body)",
+							"pm.variables.set(\"comment\", comment.comment);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"comment\": \"{{comment}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/comments/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"comments",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete comments as User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 405 code (Not Allowed) back",
+							"pm.test(\"We should get an Not Allowed (code 405) back\",()=> {",
+							"    pm.expect(response.code).to.equal(405);",
+							"});",
+							"",
+							"// Test that affected rows equals 1",
+							"pm.test(\"Expect rowsAffected to equal 1\", () => {",
+							"    pm.expect(responseData.rowsAffected).to.not.equal(1);",
+							"});",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more categories - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.products[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Delete comments as User\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All categories have been deleted correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", product.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/comments/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"comments",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Logout",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create categories as Visitor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let category = testData.categories[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 405 code (Not Allowed) back",
+							"pm.test(\"We should get an Not Allowed (code 405) back\",()=> {",
+							"    pm.expect(response.code).to.equal(405);",
+							"});",
+							"",
+							"",
+							"// Update the counter and save the updated test data",
+							"// (also including the id we set in the second test)",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more categories - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.categories[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Create categories as Visitor\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All categories have been created.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let category = testData.categories[testData.counter];",
+							"",
+							"// pm variables have a scope of one request",
+							"// setting two variables used in the body",
+							" pm.variables.set(\"name\", category.name);",
+							" pm.variables.set(\"description\", category.description);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{name}}\",\n    \"description\": \"{{description}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/categories",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get categories as Visitor",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1447,17 +2697,17 @@
 							"// Read the response data",
 							"let responseData = pm.response.json();",
 							"",
-							"pm.test(\"Check viable categories.\",()=> {",
+							"// Test that we get a 200 code (ok request) back",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
 							"    pm.expect(response.code).to.equal(200);",
 							"});",
 							"",
 							"// Test that the REST-api returns the sama data",
 							"// as our test data for the category",
-							"pm.test(\"Test that the correct category data is returned\", ()=> {",
-							"  console.log(\"category\", category);",
-							"  console.log(\"responseData\", responseData);",
-							"  pm.expect(category).to.deep.equal(responseData); ",
-							"});",
+							"//pm.test(\"Test that the correct category data is returned\", ()=> {",
+							"",
+							"  //pm.expect(category).to.deep.equal(responseData); ",
+							"//});",
 							"",
 							"// Update the counter and save the updated test data",
 							"testData.counter++;",
@@ -1466,11 +2716,13 @@
 							"// If there are more categories - then \"loop\"",
 							"// through them using setNextRequest",
 							"if(testData.categories[testData.counter]){",
-							"    pm.execution.setNextRequest(\"Get categories after change user\");",
+							"    console.log(\"category\", category);",
+							"  console.log(\"responseData\", responseData);",
+							"    pm.execution.setNextRequest(\"Get categories as Visitor\");",
 							"}",
 							"// Otherwise console.log \"All done\"",
 							"else {",
-							"    console.log(\"All categories have been read by user.\");",
+							"    console.log(\"All categories have been read correctly.\");",
 							"    // IMPORTANT: Set counter to 0 in preparation of next request",
 							"    testData.counter = 0;",
 							"    pm.collectionVariables.set(\"testData\",testData);",
@@ -1504,46 +2756,123 @@
 			"response": []
 		},
 		{
-			"name": "Create products user",
+			"name": "Change categories as Visitor",
 			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							"// Get the test data",
-							"let testData = pm.collectionVariables.get(\"testData\");",
-							"",
-							"// Get the current products",
-							"let product = testData.products[testData.counter];",
-							"",
-							"",
-							"// pm variables have a scope of one request",
-							"// setting four variables used in the body",
-							"pm.variables.set(\"name\", product.name);",
-							"pm.variables.set(\"description\", product.description);",
-							"pm.variables.set(\"price\", product.price);",
-							"pm.variables.set(\"categoryId\", product.categoryId);"
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				},
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
 							"// Get the test data",
 							"let testData = pm.collectionVariables.get(\"testData\");",
-							"// Get the current ",
-							"let product = testData.products[testData.counter];",
+							"// Get the current category",
+							"let category = testData.categories[testData.counter];",
 							"",
 							"// Read the response",
 							"let response = pm.response;",
 							"// Read the response data",
 							"let responseData = pm.response.json();",
 							"",
-							"// Test that we get a 200 code (ok request) back",
-							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"// Test that we get a 405 code (Not Allowed) back",
+							"pm.test(\"We should get an Not Allowed (code 405) back\",()=> {",
+							"    pm.expect(response.code).to.equal(405);",
+							"});",
+							"",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more categories - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.categories[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Change categories as Visitor\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All category-decriptions have been changed.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let category = testData.categories[testData.counter];",
+							"",
+							"// Change the description and save to collectionVariables",
+							"category.description += \" Some extra text in the description.\";",
+							"pm.collectionVariables.set(\"testData\", testData);",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", category.id); ",
+							"",
+							"// Set a pm variable to description (it is used in the request body)",
+							"pm.variables.set(\"description\", category.description);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"{{description}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/categories/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"categories",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete categories as Visitor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let category = testData.categories[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 500 code (Forbidden) back",
+							"pm.test(\"We should get an Forbidden (code 405) back\",()=> {",
 							"    pm.expect(response.code).to.equal(405);",
 							"});",
 							"",
@@ -1553,21 +2882,136 @@
 							"});",
 							"",
 							"// Update the counter and save the updated test data",
-							"// (also including the id we set in the second test)",
 							"testData.counter++;",
 							"pm.collectionVariables.set(\"testData\",testData);",
 							"",
-							"// If there are more products - then \"loop\"",
+							"// If there are more categories - then \"loop\"",
 							"// through them using setNextRequest",
-							"if(testData.products[testData.counter]){",
-							"    pm.execution.setNextRequest(\"Create products user\");",
+							"if(testData.categories[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Delete categories as Visitor\");",
 							"}",
 							"// Otherwise console.log \"All done\"",
 							"else {",
-							"    console.log(\"All products have been created.\");",
+							"    console.log(\"All categories have been deleted correctly.\");",
 							"    // IMPORTANT: Set counter to 0 in preparation of next request",
 							"    testData.counter = 0;",
 							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let category = testData.categories[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", category.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/categories/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"categories",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create products as Visitor",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data\r",
+							"let testData = pm.collectionVariables.get(\"testData\");\r",
+							"\r",
+							"// Get the current product\r",
+							"let product = testData.products[testData.counter];\r",
+							"\r",
+							"// Replace the product name in the property productId with actual id of the product\r",
+							"    let categoryWithMatchingName = testData.categories.find(category => {\r",
+							"        return category.name == product.categoryId\r",
+							"    });\r",
+							"\r",
+							"// Change the categoryId property of the product to the id of the matching product\r",
+							"product.categoryId = categoryWithMatchingName?.id;\r",
+							"\r",
+							"// Save changes to our test data (the new value of productId)\r",
+							" console.log(\"A product\", product);\r",
+							" pm.collectionVariables.set(\"testData\",testData);\r",
+							"// pm variables have a scope of one request\r",
+							"// setting two variables used in the body\r",
+							" pm.variables.set(\"name\", product.name);\r",
+							" pm.variables.set(\"description\", product.description);\r",
+							" pm.variables.set(\"price\", product.price);\r",
+							" pm.variables.set(\"productId\", product.productId);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data\r",
+							"let testData = pm.collectionVariables.get(\"testData\");\r",
+							"// Get the current product\r",
+							"let product = testData.products[testData.counter];\r",
+							"\r",
+							"// Read the response\r",
+							"let response = pm.response;\r",
+							"// Read the response data\r",
+							"let responseData = pm.response.json();\r",
+							"\r",
+							"// Test that we get a 405 code (Not Allowed) back\r",
+							"pm.test(\"We should get an Not Allowed (code 405) back\",()=> {\r",
+							"    pm.expect(response.code).to.equal(405);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"// Update the counter and save the updated test data\r",
+							"// (also including the id we set in the second test)\r",
+							"testData.counter++;\r",
+							"pm.collectionVariables.set(\"testData\",testData);\r",
+							"\r",
+							"// If there are more products - then \"loop\"\r",
+							"// through them using setNextRequest\r",
+							"if(testData.products[testData.counter]){\r",
+							"    pm.execution.setNextRequest(\"Create products as Visitor\");\r",
+							"}\r",
+							"// Otherwise console.log \"All done\"\r",
+							"else {\r",
+							"    console.log(\"All products have been created.\");\r",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request\r",
+							"    testData.counter = 0;\r",
+							"    pm.collectionVariables.set(\"testData\",testData);\r",
 							"}"
 						],
 						"type": "text/javascript",
@@ -1580,7 +3024,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"{{name}}\",\n    \"description\": \"{{description}}\",\n    \"price\": {{price}},\n    \"categoryId\": {{categoryId}}\n}",
+					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"description\": \"{{description}}\",\r\n    \"price\": {{price}},\r\n    \"categoryId\": {{categoryId}}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1606,10 +3050,664 @@
 			"response": []
 		},
 		{
-			"name": "Logout user",
+			"name": "Get products as Visitor",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", product.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 200 code (ok request) back",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"",
+							"// // Test that the REST-api returns the sama data",
+							"// // as our test data for the product",
+							"// pm.test(\"Test that the correct product data is returned\", ()=> {",
+							"//   console.log(\"product\", product);",
+							"//   console.log(\"responseData\", responseData);",
+							"//   pm.expect(product).to.deep.equal(responseData); ",
+							"// });",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more products - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.products[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Get products as Visitor\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All products have been read correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/products/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change products as Visitor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 405 code (Not Allowed) back",
+							"pm.test(\"We should get an Not Allowed (code 405) back\",()=> {",
+							"    pm.expect(response.code).to.equal(405);",
+							"});",
+							"",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more products - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.products[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Change products as Visitor\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All product-decriptions have been changed.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Change the description and save to collectionVariables",
+							"product.description += \" Some extra text in the description.\";",
+							"pm.collectionVariables.set(\"testData\", testData);",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", product.id); ",
+							"",
+							"// Set a pm variable to description (it is used in the request body)",
+							"pm.variables.set(\"description\", product.description);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"{{description}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/products/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete products as Visitor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that user cannot delete product due to permission restrictions",
+							"pm.test(\"User cannot delete product (405 Forbidden expected)\", () => {",
+							"  pm.expect(response.code).to.equal(405);",
+							"});",
+							"",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more categories - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.products[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Delete products as Visitor\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All categories have been deleted correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", product.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/products/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create comments as Visitor",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data\r",
+							"let testData = pm.collectionVariables.get(\"testData\");\r",
+							"\r",
+							"// Get the current comment\r",
+							"let comment = testData.comments[testData.counter];\r",
+							"\r",
+							"    // Save changes to our test data (the new value of commentId)\r",
+							"pm.collectionVariables.set(\"testData\",testData);\r",
+							"// pm variables have a scope of one request\r",
+							"// setting two variables used in the body\r",
+							"pm.variables.set(\"comment\", comment.comment);\r",
+							"pm.variables.set(\"userId\", comment.userId);\r",
+							"pm.variables.set(\"productId\", comment.productId);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data\r",
+							"let testData = pm.collectionVariables.get(\"testData\");\r",
+							"// Get the current comment\r",
+							"let comment = testData.comments[testData.counter];\r",
+							"\r",
+							"// Read the response\r",
+							"let response = pm.response;\r",
+							"// Read the response data\r",
+							"let responseData = pm.response.json();\r",
+							"\r",
+							"// Test that we get a 405 code (Not Allowed) back\r",
+							"pm.test(\"We should get an Not Allowed (code 405) back\",()=> {\r",
+							"    pm.expect(response.code).to.equal(405);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"// Update the counter and save the updated test data\r",
+							"// (also including the id we set in the second test)\r",
+							"testData.counter++;\r",
+							"pm.collectionVariables.set(\"testData\",testData);\r",
+							"\r",
+							"// If there are more comments - then \"loop\"\r",
+							"// through them using setNextRequest\r",
+							"if(testData.comments[testData.counter]){\r",
+							"    pm.execution.setNextRequest(\"Create comments as Visitor\");\r",
+							"}\r",
+							"// Otherwise console.log \"All done\"\r",
+							"else {\r",
+							"    console.log(\"All comments have been created.\");\r",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request\r",
+							"    testData.counter = 0;\r",
+							"    pm.collectionVariables.set(\"testData\",testData);\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\": \"{{comment}}\",\r\n    \"userId\": {{userId}},\r\n    \"productId\": {{productId}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/comments",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get comments as Visitor",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", comment.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 200 code (ok request) back",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"",
+							"// // Test that the REST-api returns the sama data",
+							"// // as our test data for the comment",
+							"// pm.test(\"Test that the correct comment data is returned\", ()=> {",
+							"//   console.log(\"comment\", comment);",
+							"//   console.log(\"responseData\", responseData);",
+							"//   pm.expect(comment).to.deep.equal(responseData); ",
+							"// });",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more comments - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.comments[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Get comments as Visitor\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All comments have been read correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/comments/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"comments",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change comments as Visitor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 405 code (Not Allowed) back",
+							"pm.test(\"We should get an Not Allowed (code 405) back\",()=> {",
+							"    pm.expect(response.code).to.equal(405);",
+							"});",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more comments - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.comments[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Change comments as Visitor\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All comments have been changed.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Change the description and save to collectionVariables",
+							"comment.comment += \" Some extra text in the description.\";",
+							"pm.collectionVariables.set(\"testData\", testData);",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", comment.id); ",
+							"",
+							"// Set a pm variable to description (it is used in the request body)",
+							"pm.variables.set(\"comment\", comment.comment);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"comment\": \"{{comment}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/comments/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"comments",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete comments as Visitor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 405 code (Not Allowed) back",
+							"pm.test(\"We should get an Not Allowed (code 405) back\",()=> {",
+							"    pm.expect(response.code).to.equal(405);",
+							"});",
+							"",
+							"// Test that affected rows equals 1",
+							"pm.test(\"Expect rowsAffected to equal 1\", () => {",
+							"    pm.expect(responseData.rowsAffected).to.not.equal(1);",
+							"});",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more categories - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.products[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Delete comments as Visitor\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All categories have been deleted correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", product.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/products/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login as admin again",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"thomas@nodehill.com\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://127.0.0.1:3001/api/login",
 					"protocol": "http",
@@ -1623,6 +3721,342 @@
 					"path": [
 						"api",
 						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete comments as Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current ",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"// Update the counter and save the updated test data",
+							"// (also including the id we set in the second test)",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more products - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.comments[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Delete comments as Admin\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All cats have been deleted.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", comment.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/comments/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"comments",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User comments as Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current ",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"// Update the counter and save the updated test data",
+							"// (also including the id we set in the second test)",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more products - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.comments[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Delete User comments as Admin\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All cats have been deleted.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current comment",
+							"let comment = testData.comments[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", comment.idForUser); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/comments/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"comments",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete products as Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current Product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 200 code (ok request) back",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"",
+							"// Test that affected rows equals 1",
+							"pm.test(\"Expect rowsAffected to equal 1\", () => {",
+							"    pm.expect(responseData.rowsAffected).to.equal(1);",
+							"});",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more products - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.products[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Delete products as Admin\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All products have been deleted correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current product",
+							"let product = testData.products[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", product.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/products/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete categories as Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let category = testData.categories[testData.counter];",
+							"",
+							"// Read the response",
+							"let response = pm.response;",
+							"// Read the response data",
+							"let responseData = pm.response.json();",
+							"",
+							"// Test that we get a 200 code (ok request) back",
+							"pm.test(\"We should get an ok (code 200) back\",()=> {",
+							"    pm.expect(response.code).to.equal(200);",
+							"});",
+							"",
+							"// Test that affected rows equals 1",
+							"pm.test(\"Expect rowsAffected to equal 1\", () => {",
+							"    pm.expect(responseData.rowsAffected).to.equal(1);",
+							"});",
+							"",
+							"// Update the counter and save the updated test data",
+							"testData.counter++;",
+							"pm.collectionVariables.set(\"testData\",testData);",
+							"",
+							"// If there are more categories - then \"loop\"",
+							"// through them using setNextRequest",
+							"if(testData.categories[testData.counter]){",
+							"    pm.execution.setNextRequest(\"Delete categories as Admin\");",
+							"}",
+							"// Otherwise console.log \"All done\"",
+							"else {",
+							"    console.log(\"All categories have been deleted correctly.\");",
+							"    // IMPORTANT: Set counter to 0 in preparation of next request",
+							"    testData.counter = 0;",
+							"    pm.collectionVariables.set(\"testData\",testData);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Get the test data",
+							"let testData = pm.collectionVariables.get(\"testData\");",
+							"// Get the current category",
+							"let category = testData.categories[testData.counter];",
+							"",
+							"// Set a pm variable to id (it is used in the request url)",
+							"pm.variables.set(\"id\", category.id); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/api/categories/{{id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"categories",
+						"{{id}}"
 					]
 				}
 			},

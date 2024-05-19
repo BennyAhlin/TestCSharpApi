@@ -97,9 +97,15 @@ public static class Utils
         return successRemovedMockUsers;
     }
 
-    public static Arr Count­Do­mains­FromU­se­rE­mails()
+    public static Obj CountDomainsFromUseremails()
     {
+        Arr domains = SQLQuery("SELECT SUBSTRING(email, INSTR(email, '@') + 1) AS domain, COUNT(*) AS count FROM users GROUP BY SUBSTRING(email, INSTR(email, '@') + 1); ");
+        Obj countedDomains = Obj();
 
-        return null;
+        foreach (var domain in domains)
+        {
+            countedDomains[domain.domain] = domain.count;
+        }
+        return countedDomains;
     }
 }

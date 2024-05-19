@@ -5,3 +5,4 @@ Feature: As user I want to be able to see the correct products listed when I hav
     When I choose the category "Prisvänligt"
     Then I should see the product "Basic tomatsås"
     And I should see the product "Mjöliga makaroner"
+    And I should see the product "Lök"
